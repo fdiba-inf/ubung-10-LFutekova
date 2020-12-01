@@ -1,9 +1,6 @@
 package exercise10;
 
 public class Ellipse extends Figure{
-    private Point startPoint;
-    private double a;
-    private double b;
 
     public Ellipse() {
         super(new Point(0, 0), 1, 1);
@@ -19,17 +16,17 @@ public class Ellipse extends Figure{
 
     @Override
     public double calculatePerimeter() {
-        return Math.PI * (3.0 * (a + b) - Math.sqrt((3.0 * a + b) * (a + 3.0 * b)));
+        return Math.PI * (3.0 * (side1 + side2) - Math.sqrt((3.0 * side1 + side2) * (side1 + 3.0 * side2)));
     }
 
     @Override
     public double calculateArea() {
-        return Math.PI * a * b;
+        return Math.PI * side1 * side2;
     }
 
     @Override
     public String getType() {
-        return (a == b) ? "Circle" : "Ellipse";
+        return (side1 == side2) ? "Circle" : "Ellipse";
     }
 
     @Override
